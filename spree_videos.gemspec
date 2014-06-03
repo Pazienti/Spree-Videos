@@ -14,13 +14,13 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> 2.1'
-  s.add_dependency 'youtube_it', '~> 2.4.0'
+  s.add_dependency 'youtube_it'
 
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'factory_girl', '~> 4.2'
   s.add_development_dependency 'rspec-rails',  '~> 2.14.0'
   s.add_development_dependency 'ffaker', '~> 1.16'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'json', '~> 1.8.1'
   # s.add_development_dependency 'shoulda-matchers'
-  # s.add_development_dependency 'json', '1.8.1'
 end
