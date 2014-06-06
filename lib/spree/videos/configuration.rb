@@ -14,7 +14,8 @@ module Spree
         self.youtube_url_params = {
             :enablejsapi => "1",
             :theme => "light",
-            :show_title => "0"
+            :show_title => "0",
+            :use_ssl => true
         }
       end
 

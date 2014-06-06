@@ -7,7 +7,8 @@ module Spree
     validates_uniqueness_of :youtube_ref, :scope => [:watchable_id, :watchable_type]
 
     def youtube_data
-      YouTubeIt::Client.new.video_by(youtube_ref)
+      ssl_char = 's' if Spree::Videos.configuration.youtube_url_params[:use_ssl]
+      YouTubeIt::Client.new.video_by("http#{ssl_char}://www.youtube.com/watch?v=" + youtube_ref)
     end
   
     after_validation do
