@@ -33,5 +33,7 @@ else
   end
 end
 %>
-  <%== video.youtube_data.embed_html5(html5_config) %>
+  <%  video_embed = video.youtube_data.embed_html5(html5_config)
+      video_embed = video.youtube_data.embed_html5(html5_config).gsub("http://", "https://") if Spree::Videos.configuration.youtube_url_params[:use_ssl] %>
+  <%== video_embed %>
 <% end if video.present? %>
