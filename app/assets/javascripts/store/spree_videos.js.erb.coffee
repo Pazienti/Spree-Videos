@@ -23,7 +23,7 @@ class VideoManager
 		size 		= @calculateDimensions(true)
 		matches 	= @options.youtube_match.exec(youtube_link)
 		youtubeID 	= if matches then matches[matches.length - 1] else youtube_link
-		ssl_char	= Spree::Videos::configuration.youtube_url_params[:use_ssl] ? 's' : ''
+		ssl_char	= "<%= Spree::Videos::configuration.youtube_url_params[:use_ssl] ? 's' : '' %>"
 		youtubeURL 	= "http#{ssl_char}://www.youtube.com/embed/" + youtubeID + "?origin=" + @options.originDomain + "&" + @options.youtube_options;
 		
 		@player_holder.html('<iframe type="text/html" width="' + size.width + '" height="' + size.height + '" src="' + youtubeURL + '" frameborder="0"></iframe>');
